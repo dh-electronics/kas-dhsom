@@ -1,0 +1,11 @@
+header:
+  version: 11
+
+repos:
+  meta-python2:
+    url: https://git.openembedded.org/meta-python2
+    refspec: kirkstone
+
+  meta-qt5:
+    url: https://github.com/meta-qt5/meta-qt5.git
+    refspec: master

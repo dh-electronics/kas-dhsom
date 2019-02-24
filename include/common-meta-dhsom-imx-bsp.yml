@@ -1,0 +1,24 @@
+header:
+  version: 11
+  includes:
+    - include/common-settings.yml
+
+distro: nodistro
+
+target:
+  - core-image-base
+
+repos:
+  poky:
+    url: https://git.yoctoproject.org/git/poky
+    refspec: kirkstone
+    layers:
+      meta:
+
+  meta-mainline-common:
+    url: https://source.denx.de/denx/meta-mainline-common.git
+    refspec: dunfell-3.1
+
+  meta-dhsom-imx-bsp:
+    url: https://github.com/dh-electronics/meta-dhsom-imx-bsp.git
+    refspec: dunfell-3.1

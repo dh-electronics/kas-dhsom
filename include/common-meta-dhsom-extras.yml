@@ -1,0 +1,25 @@
+header:
+  version: 11
+
+distro: dhlinux
+
+target:
+  - dh-image-demo
+
+repos:
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    refspec: kirkstone
+    layers:
+      meta-oe:
+      meta-filesystems:
+      meta-gnome:
+      meta-multimedia:
+      meta-networking:
+      meta-perl:
+      meta-python:
+      meta-webserver:
+
+  meta-dhsom-extras:
+    url: https://github.com/dh-electronics/meta-dhsom-extras.git
+    refspec: dunfell-3.1

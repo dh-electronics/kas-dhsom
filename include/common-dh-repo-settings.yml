@@ -1,0 +1,29 @@
+header:
+  version: 11
+
+bblayers_conf_header:
+  standard: |
+    POKY_BBLAYERS_CONF_VERSION = "2"
+    BBPATH = "${TOPDIR}"
+    BBFILES ?= ""
+
+local_conf_header:
+  uboot: |
+    PREFERRED_PROVIDER_virtual/bootloader = "u-boot-dhsom"
+    PREFERRED_PROVIDER_u-boot = "u-boot-dhsom"
+    PREFERRED_VERSION_u-boot-dhsom = "2018.05"
+    PREFERRED_PROVIDER_u-boot-tools = "u-boot-dhsom-tools"
+    PREFERRED_PROVIDER_u-boot-tools-native = "u-boot-dhsom-tools-native"
+    IMAGE_BOOTLOADER = "u-boot"
+  kernel: |
+    PREFERRED_PROVIDER_virtual/kernel = "linux-dhsom"
+    PREFERRED_VERSION_linux-dhsom = "5.10%"
+    KERNEL_DEVICETREE = " imx6q-dhcom-pdk2.dtb "
+
+  bootpart: |
+    BOOT_SPACE = "51200"
+    BOOTDD_VOLUME_ID = "boot"
+    IMAGE_BOOT_FILES_append = " 800x480_done.bmp 800x480_error.bmp 800x480_progress.bmp splash.bmp boot.scr"
+    WKS_FILE = "dhsom-uboot-bootpart.wks"
+  splash: |
+    do_rootfs[depends] += "splash:do_deploy"

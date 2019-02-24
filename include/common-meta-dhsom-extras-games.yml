@@ -1,0 +1,9 @@
+header:
+  version: 11
+  includes:
+    - include/common-meta-dhsom-extras-qt5.yml
+
+repos:
+  meta-games:
+    url: https://github.com/cazfi/meta-games.git
+    refspec: master

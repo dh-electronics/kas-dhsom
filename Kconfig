@@ -1,0 +1,143 @@
+choice
+  prompt "Machine selection"
+  help
+    OE MACHINE to use during the build.
+
+config MACHINE_IMX6_DHCOM_PDK2
+  bool "DH i.MX6 DHCOM PDK2"
+  help
+    OE MACHINE variable is set to dh-imx6-dhcom-pdk2 .
+
+config MACHINE_STM32MP1_DHCOM_PDK2
+  bool "DH STM32MP15xx DHCOM PDK2"
+  help
+    OE MACHINE variable is set to dh-stm32mp1-dhcom-pdk2 .
+
+config MACHINE_STM32MP1_DHCOM_DRC02
+  bool "DH STM32MP15xx DHCOM DRC02"
+  help
+    OE MACHINE variable is set to dh-stm32mp1-dhcom-drc02 .
+
+config MACHINE_STM32MP1_DHCOM_PICOITX
+  bool "DH STM32MP15xx DHCOM PicoITX"
+  help
+    OE MACHINE variable is set to dh-stm32mp1-dhcom-picoitx .
+
+config MACHINE_STM32MP1_DHCOR_AVENGER96
+  bool "DH STM32MP15xx DHCOR Avenger96"
+  help
+    OE MACHINE variable is set to dh-stm32mp1-dhcor-avenger96 .
+
+config MACHINE_STM32MP1_DHCOR_DRC_COMPACT
+  bool "DH STM32MP15xx DHCOR DRC Compact"
+  help
+    OE MACHINE variable is set to dh-stm32mp1-dhcor-drc-compact .
+
+endchoice
+
+config INCLUDE_DH_REPO_YML
+  bool "Build linux and u-boot sources from DH source repositories"
+  depends on MACHINE_IMX6_DHCOM_PDK2
+  help
+    Use DH electronics source repositories instead of mainline sources.
+    This contains a well-tested and static version, but not as up to date
+    as linux mainline sources.
+
+config INCLUDE_EXTRAS_YML
+  bool "Build full example dh-image-demo using meta-dhsom-extras layer"
+  help
+    Include meta-dhsom-extras layer and build full large dh-image-demo
+    example image with dhlinux distro, instead of core-image-base with
+    nodistro distro, which is the default.
+
+    Note that dh-image-demo is an example image containing a lot of
+    features and applications, it is large and requires much longer
+    build time.
+
+config KAS_TARGET_IMAGE
+  string "KAS Target image"
+  default "core-image-base" if !INCLUDE_EXTRAS_YML
+  default "dh-image-demo" if INCLUDE_EXTRAS_YML
+  help
+    The build target that will be built. This is often an image name, e.g.
+    core-image-base or dh-image-demo (if INCLUDE_EXTRAS_YML=y).
+
+config INCLUDE_EXTRAS_CHROMIUM_YML
+  bool "Include Chromium browser layers in build"
+  help
+    Include Chromium browser layers in bblayers.conf . This adds the
+    Chromium browser built with WL backend into dh-image-demo. This
+    requires considerable amount of build time and disk space.
+
+config INCLUDE_EXTRAS_GAMES_YML
+  bool "Include Games layers in build"
+  help
+    Include Games layer in bblayers.conf . This adds the Neverball game
+    into the dh-image-demo, which is useful for testing point sprites.
+
+config INCLUDE_EXTRAS_QT5_YML
+  bool "Include Qt5 layers in build"
+  help
+    Include Qt5 layer in bblayers.conf . This adds Qt5 libraries and
+    examples into dh-image-demo .
+
+config INCLUDE_EXTRAS_WPE_YML
+  bool "Include WPE layers in build"
+  help
+    Include WPE layer in bblayers.conf . This adds WPE webkit browser
+    into dh-image-demo .
+
+comment "Inferred and expert settings"
+
+config KAS_BUILD_SYSTEM
+  string "KAS build system"
+  default "openembedded"
+  help
+    The build_system that will used. The static kconfig string variable
+    KAS_BUILD_SYSTEM defines this value which must be openembedded, oe
+    or isar is set.
+
+config KAS_INCLUDE_BSP_YML_FILE
+  string "KAS OE MACHINE and BSP layer YML file"
+  depends on MACHINE_IMX6_DHCOM_PDK2 || \
+	     MACHINE_STM32MP1_DHCOM_PDK2 || \
+	     MACHINE_STM32MP1_DHCOM_DRC02 || \
+	     MACHINE_STM32MP1_DHCOM_PICOITX || \
+	     MACHINE_STM32MP1_DHCOR_AVENGER96 || \
+	     MACHINE_STM32MP1_DHCOR_DRC_COMPACT
+  default "dh-imx6-dhcom-pdk2.yml" if MACHINE_IMX6_DHCOM_PDK2
+  default "dh-stm32mp1-dhcom-pdk2.yml" if MACHINE_STM32MP1_DHCOM_PDK2
+  default "dh-stm32mp1-dhcom-drc02.yml" if MACHINE_STM32MP1_DHCOM_DRC02
+  default "dh-stm32mp1-dhcom-picoitx.yml" if MACHINE_STM32MP1_DHCOM_PICOITX
+  default "dh-stm32mp1-dhcor-avenger96.yml" if MACHINE_STM32MP1_DHCOR_AVENGER96
+  default "dh-stm32mp1-dhcor-drc-compact.yml" if MACHINE_STM32MP1_DHCOR_DRC_COMPACT
+
+config KAS_INCLUDE_DH_REPO_YML_FILE
+  string "KAS DH Repo YML file"
+  depends on INCLUDE_DH_REPO_YML
+  default "include/common-dh-repo-settings.yml"
+
+config KAS_INCLUDE_EXTRAS_YML_FILE
+  string "KAS Extras layer YML file"
+  depends on INCLUDE_EXTRAS_YML
+  default "include/common-meta-dhsom-extras.yml"
+
+config KAS_INCLUDE_EXTRAS_CHROMIUM_YML_FILE
+  string "KAS Extras layer CHROMIUM YML file"
+  depends on INCLUDE_EXTRAS_CHROMIUM_YML
+  default "include/common-meta-dhsom-extras-chromium.yml"
+
+config KAS_INCLUDE_EXTRAS_GAMES_YML_FILE
+  string "KAS Extras layer GAMES YML file"
+  depends on INCLUDE_EXTRAS_GAMES_YML && INCLUDE_EXTRAS_QT5_YML
+  default "include/common-meta-dhsom-extras-games.yml"
+
+config KAS_INCLUDE_EXTRAS_QT5_YML_FILE
+  string "KAS Extras layer Qt5 YML file"
+  depends on INCLUDE_EXTRAS_QT5_YML
+  default "include/common-meta-dhsom-extras-qt5.yml"
+
+config KAS_INCLUDE_EXTRAS_WPE_YML_FILE
+  string "KAS Extras layer WPE YML file"
+  depends on INCLUDE_EXTRAS_WPE_YML
+  default "include/common-meta-dhsom-extras-wpe.yml"

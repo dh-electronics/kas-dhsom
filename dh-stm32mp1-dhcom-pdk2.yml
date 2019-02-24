@@ -1,0 +1,6 @@
+header:
+  version: 11
+  includes:
+    - include/common-meta-dhsom-stm32-bsp.yml
+
+machine: dh-stm32mp1-dhcom-pdk2
