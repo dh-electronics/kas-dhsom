@@ -35,6 +35,23 @@ config MACHINE_STM32MP1_DHCOR_DRC_COMPACT
 
 endchoice
 
+choice
+  prompt "OE release selection"
+  help
+    OE release to use during the build.
+
+config RELEASE_KIRKSTONE
+  bool "OE Kirkstone 4.0 LTS"
+  help
+    OE Kirkstone 4.0 LTS release .
+
+config RELEASE_DUNFELL
+  bool "OE Dunfell 3.1 LTS"
+  help
+    OE Dunfell 3.1 LTS release .
+
+endchoice
+
 config INCLUDE_DH_REPO_YML
   bool "Build linux and u-boot sources from DH source repositories"
   depends on MACHINE_IMX6_DHCOM_PDK2
@@ -96,6 +113,11 @@ config KAS_BUILD_SYSTEM
     The build_system that will used. The static kconfig string variable
     KAS_BUILD_SYSTEM defines this value which must be openembedded, oe
     or isar is set.
+
+config KAS_INCLUDE_RELEASE_YML_FILE
+  string "KAS OE release YML file"
+  default "include/common-dunfell.yml" if RELEASE_DUNFELL
+  default "include/common-kirkstone.yml" if RELEASE_KIRKSTONE
 
 config KAS_INCLUDE_BSP_YML_FILE
   string "KAS OE MACHINE and BSP layer YML file"

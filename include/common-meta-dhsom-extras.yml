@@ -9,7 +9,6 @@ target:
 repos:
   meta-openembedded:
     url: https://git.openembedded.org/meta-openembedded
-    refspec: kirkstone
     layers:
       meta-oe:
       meta-filesystems:

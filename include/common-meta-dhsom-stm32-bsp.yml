@@ -11,7 +11,6 @@ target:
 repos:
   poky:
     url: https://git.yoctoproject.org/git/poky
-    refspec: kirkstone
     layers:
       meta:
 
