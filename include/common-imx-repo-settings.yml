@@ -1,0 +1,54 @@
+header:
+  version: 11
+  includes:
+    - include/common-meta-dhsom-extras.yml
+
+distro: fsl-imx-wayland
+
+target:
+  - imx-image-full
+
+local_conf_header:
+  standard: |
+    DISTRO_FEATURES:append = " virtualization"
+    IMX_DEFAULT_BSP = "nxp"
+    ACCEPT_FSL_EULA = "1"
+    CONF_VERSION = "2"
+    # Avoid broken dependency in meta-imx layer
+    BBMASK += "meta-imx/meta-bsp/recipes-bsp/u-boot/u-boot-imx-tools_2021.04.bb"
+    # Avoid broken patches in meta-freescale layer
+    BBMASK += "meta-freescale/recipes-multimedia/pulseaudio/pulseaudio_%.bbappend"
+    # Repair variable append misuse in meta-imx layer.conf
+    SOC_DEFAULT_IMAGE_FSTYPES:remove = "wic.bz2 tar.bz2"
+    # Generate wic.xz image type along others
+    SOC_DEFAULT_IMAGE_FSTYPES:append = " wic.xz"
+
+repos:
+  meta-freescale:
+    url: https://github.com/Freescale/meta-freescale
+
+  meta-freescale-distro:
+    url: https://github.com/Freescale/meta-freescale-distro
+
+  meta-imx:
+    url: https://source.codeaurora.org/external/imx/meta-imx
+    refspec: "kirkstone-5.15.32-2.0.0"
+    layers:
+      meta-bsp:
+      meta-ml:
+      meta-sdk:
+
+  meta-nxp-demo-experience:
+    url: https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience
+
+  meta-qt6:
+    url: git://code.qt.io/yocto/meta-qt6.git
+    refspec: "6.3"
+
+  meta-virtualization:
+    url: git://git.yoctoproject.org/meta-virtualization
+
+  poky:
+    layers:
+      meta:
+      meta-poky:
