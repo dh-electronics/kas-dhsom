@@ -25,7 +25,7 @@ $ pip3 install kas
 Second, clone this metalayer git repository into a location accessible to the build system.
 
 ```
-$ git clone https://github.com/dh-electronics/kas-dhsom.git -b kirkstone-4.0
+$ git clone https://github.com/dh-electronics/kas-dhsom.git -b main
 ```
 
 Third, configure the build parameters, especially the work directory where the
