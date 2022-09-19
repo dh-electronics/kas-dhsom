@@ -23,7 +23,7 @@ local_conf_header:
   bootpart: |
     BOOT_SPACE = "51200"
     BOOTDD_VOLUME_ID = "boot"
-    IMAGE_BOOT_FILES_append = " 800x480_done.bmp 800x480_error.bmp 800x480_progress.bmp splash.bmp boot.scr"
+    IMAGE_BOOT_FILES:append = " 800x480_done.bmp 800x480_error.bmp 800x480_progress.bmp splash.bmp boot.scr"
     WKS_FILE = "dhsom-uboot-bootpart.wks"
   splash: |
     do_rootfs[depends] += "splash:do_deploy"
