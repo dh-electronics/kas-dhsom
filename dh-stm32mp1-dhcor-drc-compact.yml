@@ -3,4 +3,4 @@ header:
   includes:
     - include/common-meta-dhsom-stm32-bsp.yml
 
-machine: dh-stm32mp1-dhcor-avenger96
+machine: dh-stm32mp1-dhcor-drc-compact
