@@ -38,6 +38,11 @@ config MACHINE_STM32MP1_DHCOR_DRC_COMPACT
   help
     OE MACHINE variable is set to dh-stm32mp1-dhcor-drc-compact .
 
+config MACHINE_STM32MP1_DHCOR_TESTBENCH
+  bool "DH STM32MP15xx DHCOR Testbench"
+  help
+    OE MACHINE variable is set to dh-stm32mp1-dhcor-testbench .
+
 endchoice
 
 choice
@@ -156,7 +161,8 @@ config KAS_INCLUDE_BSP_YML_FILE
 	     MACHINE_STM32MP1_DHCOM_DRC02 || \
 	     MACHINE_STM32MP1_DHCOM_PICOITX || \
 	     MACHINE_STM32MP1_DHCOR_AVENGER96 || \
-	     MACHINE_STM32MP1_DHCOR_DRC_COMPACT
+	     MACHINE_STM32MP1_DHCOR_DRC_COMPACT || \
+	     MACHINE_STM32MP1_DHCOR_TESTBENCH
   default "dh-imx6-dhcom-pdk2.yml" if MACHINE_IMX6_DHCOM_PDK2
   default "dh-imx8mp-dhcom-pdk2.yml" if MACHINE_IMX8MP_DHCOM_PDK2
   default "dh-stm32mp1-dhcom-pdk2.yml" if MACHINE_STM32MP1_DHCOM_PDK2
@@ -164,6 +170,7 @@ config KAS_INCLUDE_BSP_YML_FILE
   default "dh-stm32mp1-dhcom-picoitx.yml" if MACHINE_STM32MP1_DHCOM_PICOITX
   default "dh-stm32mp1-dhcor-avenger96.yml" if MACHINE_STM32MP1_DHCOR_AVENGER96
   default "dh-stm32mp1-dhcor-drc-compact.yml" if MACHINE_STM32MP1_DHCOR_DRC_COMPACT
+  default "dh-stm32mp1-dhcor-testbench.yml" if MACHINE_STM32MP1_DHCOR_TESTBENCH
 
 config KAS_INCLUDE_DH_REPO_YML_FILE
   string "KAS DH Repo YML file"
