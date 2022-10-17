@@ -98,6 +98,12 @@ config INCLUDE_EXTRAS_QT5_YML
     Include Qt5 layer in bblayers.conf . This adds Qt5 libraries and
     examples into dh-image-demo .
 
+config INCLUDE_EXTRAS_QT6_YML
+  bool "Include Qt6 layers in build"
+  help
+    Include Qt6 layer in bblayers.conf . This adds Qt6 libraries and
+    examples into dh-image-demo .
+
 config INCLUDE_EXTRAS_WPE_YML
   bool "Include WPE layers in build"
   help
@@ -158,6 +164,11 @@ config KAS_INCLUDE_EXTRAS_QT5_YML_FILE
   string "KAS Extras layer Qt5 YML file"
   depends on INCLUDE_EXTRAS_QT5_YML
   default "include/common-meta-dhsom-extras-qt5.yml"
+
+config KAS_INCLUDE_EXTRAS_QT6_YML_FILE
+  string "KAS Extras layer Qt6 YML file"
+  depends on INCLUDE_EXTRAS_QT6_YML
+  default "include/common-meta-dhsom-extras-qt6.yml"
 
 config KAS_INCLUDE_EXTRAS_WPE_YML_FILE
   string "KAS Extras layer WPE YML file"

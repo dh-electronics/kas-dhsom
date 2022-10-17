@@ -1,0 +1,7 @@
+header:
+  version: 11
+
+repos:
+  meta-qt6:
+    url: git://code.qt.io/yocto/meta-qt6.git
+    refspec: "6.3"
