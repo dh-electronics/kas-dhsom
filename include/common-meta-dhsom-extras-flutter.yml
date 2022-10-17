@@ -1,0 +1,12 @@
+header:
+  version: 11
+  includes:
+    - include/common-meta-dhsom-extras-clang.yml
+
+local_conf_header:
+  ffmpeg: |
+    LICENSE_FLAGS_ACCEPTED = "commercial"
+
+repos:
+  meta-flutter:
+    url: https://github.com/meta-flutter/meta-flutter.git

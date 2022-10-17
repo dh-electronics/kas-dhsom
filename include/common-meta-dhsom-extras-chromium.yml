@@ -1,11 +1,9 @@
 header:
   version: 11
+  includes:
+    - include/common-meta-dhsom-extras-clang.yml
 
 repos:
-  meta-clang:
-    url: https://github.com/kraj/meta-clang.git
-    refspec: master
-
   meta-browser:
     url: https://github.com/OSSystems/meta-browser.git
     refspec: master

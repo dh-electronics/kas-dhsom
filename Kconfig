@@ -86,6 +86,13 @@ config INCLUDE_EXTRAS_CHROMIUM_YML
     Chromium browser built with WL backend into dh-image-demo. This
     requires considerable amount of build time and disk space.
 
+config INCLUDE_EXTRAS_FLUTTER_YML
+  bool "Include Flutter layers in build"
+  help
+    Include Flutter layer in bblayers.conf . This adds Flutter libraries
+    and examples into dh-image-demo .
+    Note that this requires LICENSE_FLAGS_ACCEPTED = "commercial" .
+
 config INCLUDE_EXTRAS_GAMES_YML
   bool "Include Games layers in build"
   help
@@ -154,6 +161,11 @@ config KAS_INCLUDE_EXTRAS_CHROMIUM_YML_FILE
   string "KAS Extras layer CHROMIUM YML file"
   depends on INCLUDE_EXTRAS_CHROMIUM_YML
   default "include/common-meta-dhsom-extras-chromium.yml"
+
+config KAS_INCLUDE_EXTRAS_FLUTTER_YML_FILE
+  string "KAS Extras layer Flutter YML file"
+  depends on INCLUDE_EXTRAS_FLUTTER_YML
+  default "include/common-meta-dhsom-extras-flutter.yml"
 
 config KAS_INCLUDE_EXTRAS_GAMES_YML_FILE
   string "KAS Extras layer GAMES YML file"
