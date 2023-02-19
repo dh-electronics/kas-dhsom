@@ -31,7 +31,7 @@ repos:
     url: https://github.com/Freescale/meta-freescale-distro
 
   meta-imx:
-    url: https://source.codeaurora.org/external/imx/meta-imx
+    url: https://github.com/nxp-imx/meta-imx.git
     refspec: "kirkstone-5.15.32-2.0.0"
     layers:
       meta-bsp:
@@ -39,7 +39,7 @@ repos:
       meta-sdk:
 
   meta-nxp-demo-experience:
-    url: https://source.codeaurora.org/external/imxsupport/meta-nxp-demo-experience
+    url: https://github.com/nxp-imx-support/meta-nxp-demo-experience
 
   meta-qt6:
     url: git://code.qt.io/yocto/meta-qt6.git
