@@ -15,7 +15,18 @@ local_conf_header:
     ACCEPT_FSL_EULA = "1"
     CONF_VERSION = "2"
     # Avoid broken dependency in meta-imx layer
-    BBMASK += "meta-imx/meta-bsp/recipes-bsp/u-boot/u-boot-imx-tools_2021.04.bb"
+    BBMASK += "meta-imx/meta-bsp/recipes-bsp/u-boot/u-boot-imx-tools_2022.04.bb"
+    BBMASK += "meta-imx/meta-bsp/recipes-support/opencv/opencv_4.6.0.imx.bb"
+    # Avoid broken blob package QA failure in meta-imx layer
+    PACKAGECONFIG:remove:pn-nnstreamer = "deepview-rt"
+    ML_NNSTREAMER_PKGS_LIST:remove:pn-packagegroup-imx-ml = "nnstreamer-deepview-rt"
+    ML_PKGS:remove:pn-packagegroup-imx-ml = "deepview-rt-examples"
+    # Avoid broken cryptodev in meta-imx-layer
+    RDEPENDS_IMX_TO_REMOVE:append:pn-packagegroup-fsl-tools-testapps = "cryptodev-module cryptodev-tests"
+    # Avoid broken kernel isp-vvcam module in meta-imx-layer
+    ISP_PKGS:remove:pn-packagegroup-imx-isp = "kernel-module-isp-vvcam"
+    # Avoid broken scons do_compiler workaround in meta-imx layer
+    EXTRA_OESCONS:remove:pn-arm-compute-library = "${SCONS_MAXLINELENGTH}"
     # Avoid broken patches in meta-freescale layer
     BBMASK += "meta-freescale/recipes-multimedia/pulseaudio/pulseaudio_%.bbappend"
     # Repair variable append misuse in meta-imx layer.conf
@@ -32,7 +43,7 @@ repos:
 
   meta-imx:
     url: https://github.com/nxp-imx/meta-imx.git
-    refspec: "kirkstone-5.15.32-2.0.0"
+    refspec: "kirkstone-5.15.71-2.2.0"
     layers:
       meta-bsp:
       meta-ml:
