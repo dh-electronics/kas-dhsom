@@ -13,6 +13,11 @@ config MACHINE_IMX8MP_DHCOM_PDK2
   help
     OE MACHINE variable is set to dh-imx8mp-dhcom-pdk2 .
 
+config MACHINE_IMX8MP_DHCOM_PDK3
+  bool "DH i.MX8MP DHCOM PDK3"
+  help
+    OE MACHINE variable is set to dh-imx8mp-dhcom-pdk3 .
+
 config MACHINE_STM32MP1_DHCOM_PDK2
   bool "DH STM32MP15xx DHCOM PDK2"
   help
@@ -72,10 +77,10 @@ config INCLUDE_DH_REPO_YML
 
 config INCLUDE_IMX_REPO_YML
   bool "Build downstream NXP BSP"
-  depends on MACHINE_IMX8MP_DHCOM_PDK2
+  depends on MACHINE_IMX8MP_DHCOM_PDK2 || MACHINE_IMX8MP_DHCOM_PDK3
   help
     Use meta-imx and meta-freescale which provide downstream BSP for the
-    MX8MP DHCOM PDK2. This downstream BSP can be used to operate the NPU
+    i.MX8M Plus DHCOM. This downstream BSP can be used to operate the NPU
     until there is a suitable upstream driver. Keep in mind the downstream
     BSP is seldom receiving any security updates and contains vast amount
     of unreviewed code.
@@ -157,6 +162,7 @@ config KAS_INCLUDE_BSP_YML_FILE
   string "KAS OE MACHINE and BSP layer YML file"
   depends on MACHINE_IMX6_DHCOM_PDK2 || \
 	     MACHINE_IMX8MP_DHCOM_PDK2 || \
+	     MACHINE_IMX8MP_DHCOM_PDK3 || \
 	     MACHINE_STM32MP1_DHCOM_PDK2 || \
 	     MACHINE_STM32MP1_DHCOM_DRC02 || \
 	     MACHINE_STM32MP1_DHCOM_PICOITX || \
@@ -165,6 +171,7 @@ config KAS_INCLUDE_BSP_YML_FILE
 	     MACHINE_STM32MP1_DHCOR_TESTBENCH
   default "dh-imx6-dhcom-pdk2.yml" if MACHINE_IMX6_DHCOM_PDK2
   default "dh-imx8mp-dhcom-pdk2.yml" if MACHINE_IMX8MP_DHCOM_PDK2
+  default "dh-imx8mp-dhcom-pdk3.yml" if MACHINE_IMX8MP_DHCOM_PDK3
   default "dh-stm32mp1-dhcom-pdk2.yml" if MACHINE_STM32MP1_DHCOM_PDK2
   default "dh-stm32mp1-dhcom-drc02.yml" if MACHINE_STM32MP1_DHCOM_DRC02
   default "dh-stm32mp1-dhcom-picoitx.yml" if MACHINE_STM32MP1_DHCOM_PICOITX

@@ -1,0 +1,6 @@
+header:
+  version: 11
+  includes:
+    - include/common-meta-dhsom-imx-bsp.yml
+
+machine: dh-imx8mp-dhcom-pdk3
