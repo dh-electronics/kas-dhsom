@@ -8,6 +8,11 @@ config MACHINE_IMX6_DHCOM_PDK2
   help
     OE MACHINE variable is set to dh-imx6-dhcom-pdk2 .
 
+config MACHINE_IMX6_DHCOM_PICOITX
+  bool "DH i.MX6 DHCOM PicoITX"
+  help
+    OE MACHINE variable is set to dh-imx6-dhcom-picoitx .
+
 config MACHINE_IMX8MP_DHCOM_PDK2
   bool "DH i.MX8MP DHCOM PDK2"
   help
@@ -166,6 +171,7 @@ config KAS_INCLUDE_RELEASE_YML_FILE
 config KAS_INCLUDE_BSP_YML_FILE
   string "KAS OE MACHINE and BSP layer YML file"
   depends on MACHINE_IMX6_DHCOM_PDK2 || \
+	     MACHINE_IMX6_DHCOM_PICOITX || \
 	     MACHINE_IMX8MP_DHCOM_PDK2 || \
 	     MACHINE_IMX8MP_DHCOM_PDK3 || \
 	     MACHINE_STM32MP1_DHCOM_PDK2 || \
@@ -175,6 +181,7 @@ config KAS_INCLUDE_BSP_YML_FILE
 	     MACHINE_STM32MP1_DHCOR_DRC_COMPACT || \
 	     MACHINE_STM32MP1_DHCOR_TESTBENCH
   default "dh-imx6-dhcom-pdk2.yml" if MACHINE_IMX6_DHCOM_PDK2
+  default "dh-imx6-dhcom-picoitx.yml" if MACHINE_IMX6_DHCOM_PICOITX
   default "dh-imx8mp-dhcom-pdk2.yml" if MACHINE_IMX8MP_DHCOM_PDK2
   default "dh-imx8mp-dhcom-pdk3.yml" if MACHINE_IMX8MP_DHCOM_PDK3
   default "dh-stm32mp1-dhcom-pdk2.yml" if MACHINE_STM32MP1_DHCOM_PDK2
