@@ -95,6 +95,11 @@ config INCLUDE_EXTRAS_YML
     Note that dh-image-demo is an example image containing a lot of
     features and applications, it is large and requires much longer
     build time.
+    
+config INCLUDE_SDK_YML
+  bool "Populate SDK for image recipe"
+  help
+    Populate SDK for selected image recipe. 
 
 config KAS_TARGET_IMAGE
   string "KAS Target image"
@@ -223,3 +228,8 @@ config KAS_INCLUDE_EXTRAS_WPE_YML_FILE
   string "KAS Extras layer WPE YML file"
   depends on INCLUDE_EXTRAS_WPE_YML
   default "include/common-meta-dhsom-extras-wpe.yml"
+  
+config KAS_INCLUDE_SDK_YML_FILE
+  string "KAS SDK YML file"
+  depends on INCLUDE_SDK_YML
+  default "include/common-sdk.yml"
