@@ -21,4 +21,3 @@ repos:
 
   meta-dhsom-extras:
     url: https://github.com/dh-electronics/meta-dhsom-extras.git
-    refspec: dunfell-3.1
