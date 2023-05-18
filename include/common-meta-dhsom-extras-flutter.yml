@@ -6,6 +6,7 @@ header:
 local_conf_header:
   ffmpeg: |
     LICENSE_FLAGS_ACCEPTED = "commercial"
+    TOOLCHAIN_HOST_TASK:append = " nativesdk-flutter-sdk"
 
 repos:
   meta-flutter:
