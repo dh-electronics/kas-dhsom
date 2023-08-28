@@ -33,6 +33,13 @@ local_conf_header:
     SOC_DEFAULT_IMAGE_FSTYPES:remove = "wic.bz2 tar.bz2"
     # Generate wic.xz image type along others
     SOC_DEFAULT_IMAGE_FSTYPES:append = " wic.xz"
+    # Use NXP libdrm fork
+    PREFERRED_PROVIDER_drm = "libdrm"
+    PREFERRED_PROVIDER_libdrm = "libdrm"
+    PREFERRED_PROVIDER_libdrm-native = "libdrm-native"
+    PREFERRED_PROVIDER_nativesdk-libdrm = "nativesdk-libdrm"
+    IMAGE_INSTALL:remove:pn-dh-image-demo = "libdrm-mainline-tests"
+    IMAGE_INSTALL:remove:pn-imx-image-full = "libdrm-mainline-tests"
 
 repos:
   meta-freescale:
