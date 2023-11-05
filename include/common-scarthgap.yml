@@ -6,9 +6,6 @@ defaults:
     branch: scarthgap
 
 local_conf_header:
-  standard: |
-    CONF_VERSION = "2"
-
   diskmon: |
     BB_DISKMON_DIRS = "\
         STOPTASKS,${TMPDIR},1G,100K \

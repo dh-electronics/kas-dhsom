@@ -6,9 +6,6 @@ defaults:
     branch: kirkstone
 
 local_conf_header:
-  standard: |
-    CONF_VERSION = "2"
-
   lttng: |
     LTTNGMODULES:pn-lttng-tools = ""
 

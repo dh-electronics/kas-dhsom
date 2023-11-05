@@ -6,9 +6,6 @@ defaults:
     branch: dunfell
 
 local_conf_header:
-  standard: |
-    CONF_VERSION = "1"
-
   lttng: |
     LTTNGMODULES:pn-packagegroup-core-tools-profile = ""
 
