@@ -6,6 +6,6 @@ header:
 repos:
   meta-browser:
     url: https://github.com/OSSystems/meta-browser.git
-    refspec: master
+    branch: master
     layers:
       meta-chromium:

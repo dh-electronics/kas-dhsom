@@ -50,7 +50,7 @@ repos:
 
   meta-imx:
     url: https://github.com/nxp-imx/meta-imx.git
-    refspec: "kirkstone-5.15.71-2.2.0"
+    branch: "kirkstone-5.15.71-2.2.0"
     layers:
       meta-bsp:
       meta-ml:
@@ -61,7 +61,7 @@ repos:
 
   meta-qt6:
     url: https://code.qt.io/yocto/meta-qt6.git
-    refspec: "6.3"
+    branch: "6.3"
 
   meta-virtualization:
     url: git://git.yoctoproject.org/meta-virtualization

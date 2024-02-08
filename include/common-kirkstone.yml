@@ -3,7 +3,7 @@ header:
 
 defaults:
   repos:
-    refspec: kirkstone
+    branch: kirkstone
 
 local_conf_header:
   standard: |

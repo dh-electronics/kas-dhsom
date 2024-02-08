@@ -3,7 +3,7 @@ header:
 
 defaults:
   repos:
-    refspec: dunfell
+    branch: dunfell
 
 local_conf_header:
   standard: |

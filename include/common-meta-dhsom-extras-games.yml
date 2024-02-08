@@ -6,4 +6,4 @@ header:
 repos:
   meta-games:
     url: https://github.com/cazfi/meta-games.git
-    refspec: master
+    branch: master
