@@ -9,6 +9,9 @@ local_conf_header:
   standard: |
     CONF_VERSION = "2"
 
+  lttng: |
+    LTTNGMODULES:pn-lttng-tools = ""
+
   diskmon: |
     BB_DISKMON_DIRS = "\
         STOPTASKS,${TMPDIR},1G,100K \
