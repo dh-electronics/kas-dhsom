@@ -11,3 +11,6 @@ local_conf_header:
 repos:
   meta-flutter:
     url: https://github.com/meta-flutter/meta-flutter.git
+    layers:
+      .:
+      meta-flutter-apps:
