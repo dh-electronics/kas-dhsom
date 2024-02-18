@@ -65,6 +65,11 @@ choice
   help
     OE release to use during the build.
 
+config RELEASE_SCARTHGAP
+  bool "OE Scarthgap 5.0 LTS"
+  help
+    OE Scarthgap 5.0 LTS release .
+
 config RELEASE_KIRKSTONE
   bool "OE Kirkstone 4.0 LTS"
   help
@@ -172,6 +177,7 @@ config KAS_INCLUDE_RELEASE_YML_FILE
   string "KAS OE release YML file"
   default "include/common-dunfell.yml" if RELEASE_DUNFELL
   default "include/common-kirkstone.yml" if RELEASE_KIRKSTONE
+  default "include/common-scarthgap.yml" if RELEASE_SCARTHGAP
 
 config KAS_INCLUDE_BSP_YML_FILE
   string "KAS OE MACHINE and BSP layer YML file"
