@@ -1,0 +1,6 @@
+header:
+  version: 14
+  includes:
+    - include/common-meta-dhsom-stm32-bsp.yml
+
+machine: dh-stm32mp13-dhcor-dhsbc
