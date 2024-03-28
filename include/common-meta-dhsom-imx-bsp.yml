@@ -16,6 +16,8 @@ repos:
 
   meta-mainline-common:
     url: https://source.denx.de/denx/meta-mainline-common.git
+    branch: main
 
   meta-dhsom-imx-bsp:
     url: https://github.com/dh-electronics/meta-dhsom-imx-bsp.git
+    branch: main

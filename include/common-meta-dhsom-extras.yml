@@ -21,3 +21,4 @@ repos:
 
   meta-dhsom-extras:
     url: https://github.com/dh-electronics/meta-dhsom-extras.git
+    branch: main
