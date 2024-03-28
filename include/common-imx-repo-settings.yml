@@ -17,6 +17,7 @@ local_conf_header:
     # Avoid broken dependency in meta-imx layer
     BBMASK += "meta-imx/meta-bsp/recipes-bsp/u-boot/u-boot-imx-tools_2022.04.bb"
     BBMASK += "meta-imx/meta-bsp/recipes-support/opencv/opencv_4.6.0.imx.bb"
+    UUU_BOOTLOADER_UNTAGGED = "imx-boot-untagged"
     # Avoid broken blob package QA failure in meta-imx layer
     PACKAGECONFIG:remove:pn-nnstreamer = "deepview-rt"
     ML_NNSTREAMER_PKGS_LIST:remove:pn-packagegroup-imx-ml = "nnstreamer-deepview-rt"
