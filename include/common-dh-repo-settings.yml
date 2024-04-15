@@ -9,6 +9,7 @@ bblayers_conf_header:
 
 local_conf_header:
   uboot: |
+    DH_UBOOT_RECIPE = "u-boot-dhsom"
     PREFERRED_PROVIDER_virtual/bootloader = "u-boot-dhsom"
     PREFERRED_PROVIDER_u-boot = "u-boot-dhsom"
     PREFERRED_VERSION_u-boot-dhsom = "2018.05"
