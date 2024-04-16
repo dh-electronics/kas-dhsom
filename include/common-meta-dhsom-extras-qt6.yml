@@ -4,4 +4,4 @@ header:
 repos:
   meta-qt6:
     url: https://code.qt.io/yocto/meta-qt6.git
-    branch: "6.5"
+    branch: "6.6"
