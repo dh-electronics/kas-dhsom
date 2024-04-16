@@ -1,9 +1,14 @@
 header:
   version: 14
 
+bblayers_conf_header:
+  qt5scarthgap: |
+    LAYERSERIES_COMPAT_meta-python2:append = " dunfell scarthgap"
+
 repos:
   meta-python2:
     url: https://git.openembedded.org/meta-python2
+    branch: master
 
   meta-qt5:
     url: https://github.com/meta-qt5/meta-qt5.git
