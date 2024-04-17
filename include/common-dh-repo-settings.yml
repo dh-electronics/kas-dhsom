@@ -16,7 +16,7 @@ local_conf_header:
     IMAGE_BOOTLOADER = "u-boot"
   kernel: |
     PREFERRED_PROVIDER_virtual/kernel = "linux-dhsom"
-    PREFERRED_VERSION_linux-dhsom = "5.10%"
+    PREFERRED_VERSION_linux-dhsom = "6.1%"
     KERNEL_DEVICETREE = " imx6q-dhcom-pdk2.dtb "
 
   bootpart: |
