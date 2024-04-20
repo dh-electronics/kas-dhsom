@@ -12,4 +12,4 @@ repos:
 
   meta-qt5:
     url: https://github.com/meta-qt5/meta-qt5.git
-    branch: master
+    commit: 890b716d92a49a43f8c6893a0d6c577064ebab02
