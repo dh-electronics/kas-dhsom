@@ -4,3 +4,10 @@ header:
     - include/common-meta-dhsom-stm32-bsp.yml
 
 machine: dh-stm32mp13-dhcor-dhsbc
+
+repos:
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    layers:
+      meta-oe:
+      meta-python:
