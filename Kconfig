@@ -80,11 +80,6 @@ config RELEASE_KIRKSTONE
   help
     OE Kirkstone 4.0 LTS release .
 
-config RELEASE_DUNFELL
-  bool "OE Dunfell 3.1 LTS"
-  help
-    OE Dunfell 3.1 LTS release .
-
 endchoice
 
 config INCLUDE_DH_REPO_YML
@@ -180,7 +175,6 @@ config KAS_BUILD_SYSTEM
 
 config KAS_INCLUDE_RELEASE_YML_FILE
   string "KAS OE release YML file"
-  default "include/common-dunfell.yml" if RELEASE_DUNFELL
   default "include/common-kirkstone.yml" if RELEASE_KIRKSTONE
   default "include/common-scarthgap.yml" if RELEASE_SCARTHGAP
 

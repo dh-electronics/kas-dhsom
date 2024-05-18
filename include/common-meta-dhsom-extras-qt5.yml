@@ -3,7 +3,7 @@ header:
 
 bblayers_conf_header:
   qt5scarthgap: |
-    LAYERSERIES_COMPAT_meta-python2:append = " dunfell scarthgap"
+    LAYERSERIES_COMPAT_meta-python2:append = " scarthgap"
 
 repos:
   meta-python2:
