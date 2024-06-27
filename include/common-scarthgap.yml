@@ -6,6 +6,9 @@ defaults:
     branch: scarthgap
 
 local_conf_header:
+  lttng: |
+    LTTNGMODULES:pn-lttng-tools = ""
+
   diskmon: |
     BB_DISKMON_DIRS = "\
         STOPTASKS,${TMPDIR},1G,100K \
