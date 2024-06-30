@@ -32,8 +32,8 @@ local_conf_header:
     BBMASK += "meta-freescale/recipes-multimedia/pulseaudio/pulseaudio_%.bbappend"
     # Repair variable append misuse in meta-imx layer.conf
     SOC_DEFAULT_IMAGE_FSTYPES:remove = "wic.bz2 tar.bz2"
-    # Generate wic.xz image type along others
-    SOC_DEFAULT_IMAGE_FSTYPES:append = " wic.xz"
+    # Generate wic.zst image type along others
+    SOC_DEFAULT_IMAGE_FSTYPES:append = " wic.zst wic.bmap"
     # Use NXP libdrm fork
     PREFERRED_PROVIDER_drm = "libdrm"
     PREFERRED_PROVIDER_libdrm = "libdrm"
