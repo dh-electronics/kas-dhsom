@@ -3,6 +3,11 @@ choice
   help
     OE MACHINE to use during the build.
 
+config MACHINE_IMX6_DHCOM_DRC02
+  bool "DH i.MX6 DHCOM DRC02"
+  help
+    OE MACHINE variable is set to dh-imx6-dhcom-drc02 .
+
 config MACHINE_IMX6_DHCOM_PDK2
   bool "DH i.MX6 DHCOM PDK2"
   help
@@ -180,7 +185,8 @@ config KAS_INCLUDE_RELEASE_YML_FILE
 
 config KAS_INCLUDE_BSP_YML_FILE
   string "KAS OE MACHINE and BSP layer YML file"
-  depends on MACHINE_IMX6_DHCOM_PDK2 || \
+  depends on MACHINE_IMX6_DHCOM_DRC02 || \
+	     MACHINE_IMX6_DHCOM_PDK2 || \
 	     MACHINE_IMX6_DHCOM_PICOITX || \
 	     MACHINE_IMX6ULL_DHCOM_PDK2 || \
 	     MACHINE_IMX8MP_DHCOM_PDK2 || \
@@ -192,6 +198,7 @@ config KAS_INCLUDE_BSP_YML_FILE
 	     MACHINE_STM32MP1_DHCOR_AVENGER96 || \
 	     MACHINE_STM32MP1_DHCOR_DRC_COMPACT || \
 	     MACHINE_STM32MP1_DHCOR_TESTBENCH
+  default "dh-imx6-dhcom-drc02.yml" if MACHINE_IMX6_DHCOM_DRC02
   default "dh-imx6-dhcom-pdk2.yml" if MACHINE_IMX6_DHCOM_PDK2
   default "dh-imx6-dhcom-picoitx.yml" if MACHINE_IMX6_DHCOM_PICOITX
   default "dh-imx6ull-dhcom-pdk2.yml" if MACHINE_IMX6ULL_DHCOM_PDK2
