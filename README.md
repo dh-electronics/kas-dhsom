@@ -19,6 +19,12 @@ namely [Introduction](https://kas.readthedocs.io/en/latest/intro.html),
 First, install KAS to current user local bin directory:
 
 ```
+# Debian 12 and newer (recommended)
+$ pipx install kas --system-site-packages
+
+# Note: Debian 11 does not contain pipx by default, however, pipx can be
+installed from bullseye-backports, which is highly recommended. If this
+is not an option, use pip3 with debian 11:
 $ pip3 install kas
 ```
 
