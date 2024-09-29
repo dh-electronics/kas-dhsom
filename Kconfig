@@ -38,6 +38,11 @@ config MACHINE_IMX8MP_DHCOM_PDK3
   help
     OE MACHINE variable is set to dh-imx8mp-dhcom-pdk3 .
 
+config MACHINE_IMX8MP_DHCOM_PICOITX
+  bool "DH i.MX8MP DHCOM PicoITX"
+  help
+    OE MACHINE variable is set to dh-imx8mp-dhcom-picoitx .
+
 config MACHINE_STM32MP13_DHCOR_DHSBC
   bool "DH STM32MP13xx DHCOR DHSBC"
   help
@@ -186,6 +191,7 @@ config KAS_INCLUDE_BSP_YML_FILE
 	     MACHINE_IMX8MP_DHCOM_DRC02 || \
 	     MACHINE_IMX8MP_DHCOM_PDK2 || \
 	     MACHINE_IMX8MP_DHCOM_PDK3 || \
+	     MACHINE_IMX8MP_DHCOM_PICOITX || \
 	     MACHINE_STM32MP13_DHCOR_DHSBC || \
 	     MACHINE_STM32MP1_DHCOM_PDK2 || \
 	     MACHINE_STM32MP1_DHCOM_DRC02 || \
@@ -200,6 +206,7 @@ config KAS_INCLUDE_BSP_YML_FILE
   default "dh-imx8mp-dhcom-drc02.yml" if MACHINE_IMX8MP_DHCOM_DRC02
   default "dh-imx8mp-dhcom-pdk2.yml" if MACHINE_IMX8MP_DHCOM_PDK2
   default "dh-imx8mp-dhcom-pdk3.yml" if MACHINE_IMX8MP_DHCOM_PDK3
+  default "dh-imx8mp-dhcom-picoitx.yml" if MACHINE_IMX8MP_DHCOM_PICOITX
   default "dh-stm32mp13-dhcor-dhsbc.yml" if MACHINE_STM32MP13_DHCOR_DHSBC
   default "dh-stm32mp1-dhcom-pdk2.yml" if MACHINE_STM32MP1_DHCOM_PDK2
   default "dh-stm32mp1-dhcom-drc02.yml" if MACHINE_STM32MP1_DHCOM_DRC02
