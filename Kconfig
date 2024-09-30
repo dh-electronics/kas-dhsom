@@ -100,16 +100,6 @@ config INCLUDE_DH_REPO_YML
     This contains a well-tested and static version, but not as up to date
     as linux mainline sources.
 
-config INCLUDE_IMX_REPO_YML
-  bool "Build downstream NXP BSP"
-  depends on MACHINE_IMX8MP_DHCOM_PDK2 || MACHINE_IMX8MP_DHCOM_PDK3
-  help
-    Use meta-imx and meta-freescale which provide downstream BSP for the
-    i.MX8M Plus DHCOM. This downstream BSP can be used to operate the NPU
-    until there is a suitable upstream driver. Keep in mind the downstream
-    BSP is seldom receiving any security updates and contains vast amount
-    of unreviewed code.
-
 config INCLUDE_EXTRAS_YML
   bool "Build full example dh-image-demo using meta-dhsom-extras layer"
   help
@@ -128,9 +118,8 @@ config INCLUDE_SDK_YML
 
 config KAS_TARGET_IMAGE
   string "KAS Target image"
-  default "core-image-base" if !INCLUDE_EXTRAS_YML && !INCLUDE_IMX_REPO_YML
+  default "core-image-base" if !INCLUDE_EXTRAS_YML
   default "dh-image-demo" if INCLUDE_EXTRAS_YML
-  default "imx-image-full" if INCLUDE_IMX_REPO_YML
   help
     The build target that will be built. This is often an image name, e.g.
     core-image-base or dh-image-demo (if INCLUDE_EXTRAS_YML=y).
@@ -223,11 +212,6 @@ config KAS_INCLUDE_DH_REPO_YML_FILE
   string "KAS DH Repo YML file"
   depends on INCLUDE_DH_REPO_YML
   default "include/common-dh-repo-settings.yml"
-
-config KAS_INCLUDE_IMX_REPO_YML_FILE
-  string "KAS INX Repo YML file"
-  depends on INCLUDE_IMX_REPO_YML
-  default "include/common-imx-repo-settings.yml"
 
 config KAS_INCLUDE_EXTRAS_YML_FILE
   string "KAS Extras layer YML file"
