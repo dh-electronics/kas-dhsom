@@ -18,6 +18,11 @@ config MACHINE_IMX6_DHCOM_PICOITX
   help
     OE MACHINE variable is set to dh-imx6-dhcom-picoitx .
 
+config MACHINE_IMX6ULL_DHCOM_DRC02
+  bool "DH i.MX6ULL DHCOM DRC02"
+  help
+    OE MACHINE variable is set to dh-imx6ull-dhcom-drc02 .
+
 config MACHINE_IMX6ULL_DHCOM_PDK2
   bool "DH i.MX6ULL DHCOM PDK2"
   help
@@ -187,6 +192,7 @@ config KAS_INCLUDE_BSP_YML_FILE
   depends on MACHINE_IMX6_DHCOM_DRC02 || \
 	     MACHINE_IMX6_DHCOM_PDK2 || \
 	     MACHINE_IMX6_DHCOM_PICOITX || \
+	     MACHINE_IMX6ULL_DHCOM_DRC02 || \
 	     MACHINE_IMX6ULL_DHCOM_PDK2 || \
 	     MACHINE_IMX8MP_DHCOM_DRC02 || \
 	     MACHINE_IMX8MP_DHCOM_PDK2 || \
@@ -202,6 +208,7 @@ config KAS_INCLUDE_BSP_YML_FILE
   default "dh-imx6-dhcom-drc02.yml" if MACHINE_IMX6_DHCOM_DRC02
   default "dh-imx6-dhcom-pdk2.yml" if MACHINE_IMX6_DHCOM_PDK2
   default "dh-imx6-dhcom-picoitx.yml" if MACHINE_IMX6_DHCOM_PICOITX
+  default "dh-imx6ull-dhcom-drc02.yml" if MACHINE_IMX6ULL_DHCOM_DRC02
   default "dh-imx6ull-dhcom-pdk2.yml" if MACHINE_IMX6ULL_DHCOM_PDK2
   default "dh-imx8mp-dhcom-drc02.yml" if MACHINE_IMX8MP_DHCOM_DRC02
   default "dh-imx8mp-dhcom-pdk2.yml" if MACHINE_IMX8MP_DHCOM_PDK2
