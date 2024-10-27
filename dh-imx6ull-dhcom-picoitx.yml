@@ -1,0 +1,6 @@
+header:
+  version: 14
+  includes:
+    - include/common-meta-dhsom-imx-bsp.yml
+
+machine: dh-imx6ull-dhcom-picoitx
