@@ -48,15 +48,15 @@ config MACHINE_STM32MP13_DHCOR_DHSBC
   help
     OE MACHINE variable is set to dh-stm32mp13-dhcor-dhsbc .
 
-config MACHINE_STM32MP1_DHCOM_PDK2
-  bool "DH STM32MP15xx DHCOM PDK2"
-  help
-    OE MACHINE variable is set to dh-stm32mp1-dhcom-pdk2 .
-
 config MACHINE_STM32MP1_DHCOM_DRC02
   bool "DH STM32MP15xx DHCOM DRC02"
   help
     OE MACHINE variable is set to dh-stm32mp1-dhcom-drc02 .
+
+config MACHINE_STM32MP1_DHCOM_PDK2
+  bool "DH STM32MP15xx DHCOM PDK2"
+  help
+    OE MACHINE variable is set to dh-stm32mp1-dhcom-pdk2 .
 
 config MACHINE_STM32MP1_DHCOM_PICOITX
   bool "DH STM32MP15xx DHCOM PicoITX"
@@ -208,8 +208,8 @@ config KAS_INCLUDE_BSP_YML_FILE
   default "dh-imx8mp-dhcom-pdk3.yml" if MACHINE_IMX8MP_DHCOM_PDK3
   default "dh-imx8mp-dhcom-picoitx.yml" if MACHINE_IMX8MP_DHCOM_PICOITX
   default "dh-stm32mp13-dhcor-dhsbc.yml" if MACHINE_STM32MP13_DHCOR_DHSBC
-  default "dh-stm32mp1-dhcom-pdk2.yml" if MACHINE_STM32MP1_DHCOM_PDK2
   default "dh-stm32mp1-dhcom-drc02.yml" if MACHINE_STM32MP1_DHCOM_DRC02
+  default "dh-stm32mp1-dhcom-pdk2.yml" if MACHINE_STM32MP1_DHCOM_PDK2
   default "dh-stm32mp1-dhcom-picoitx.yml" if MACHINE_STM32MP1_DHCOM_PICOITX
   default "dh-stm32mp1-dhcor-avenger96.yml" if MACHINE_STM32MP1_DHCOR_AVENGER96
   default "dh-stm32mp1-dhcor-drc-compact.yml" if MACHINE_STM32MP1_DHCOR_DRC_COMPACT
