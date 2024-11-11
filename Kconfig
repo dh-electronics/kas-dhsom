@@ -126,6 +126,14 @@ config INCLUDE_EXTRAS_YML
     features and applications, it is large and requires much longer
     build time.
 
+config INCLUDE_DEBUG_YML
+  bool "Build image suitable for development"
+  default y
+  help
+    Build image suitable for development. The image includes additional
+    IMAGE_FEATURES which disable root password and include development
+    and profiling tools.
+
 config INCLUDE_SDK_YML
   bool "Populate SDK for image recipe"
   help
@@ -268,6 +276,11 @@ config KAS_INCLUDE_EXTRAS_WPE_YML_FILE
   string "KAS Extras layer WPE YML file"
   depends on INCLUDE_EXTRAS_WPE_YML
   default "include/common-meta-dhsom-extras-wpe.yml"
+
+config KAS_INCLUDE_DEBUG_YML_FILE
+  string "KAS DEBUG YML file"
+  depends on INCLUDE_DEBUG_YML
+  default "include/common-debug.yml"
 
 config KAS_INCLUDE_SDK_YML_FILE
   string "KAS SDK YML file"

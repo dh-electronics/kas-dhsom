@@ -1,0 +1,6 @@
+header:
+  version: 14
+
+local_conf_header:
+  debug_extra_image_features: |
+    EXTRA_IMAGE_FEATURES:append = " debug-tweaks tools-debug tools-profile"
