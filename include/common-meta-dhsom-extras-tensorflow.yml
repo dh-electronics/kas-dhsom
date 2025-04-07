@@ -1,0 +1,7 @@
+header:
+  version: 14
+
+repos:
+  meta-tensorflow:
+    url: https://git.yoctoproject.org/meta-tensorflow/
+    branch: master

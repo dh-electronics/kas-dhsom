@@ -179,6 +179,12 @@ config INCLUDE_EXTRAS_QT6_YML
     Include Qt6 layer in bblayers.conf . This adds Qt6 libraries and
     examples into dh-image-demo .
 
+config INCLUDE_EXTRAS_TENSORFLOW_YML
+  bool "Include TensorFlow layers in build"
+  help
+    Include TensorFlow layer in bblayers.conf . This adds TensorFlow-Lite
+    libraries and examples into dh-image-demo .
+
 config INCLUDE_EXTRAS_WPE_YML
   bool "Include WPE layers in build"
   help
@@ -271,6 +277,11 @@ config KAS_INCLUDE_EXTRAS_QT6_YML_FILE
   string "KAS Extras layer Qt6 YML file"
   depends on INCLUDE_EXTRAS_QT6_YML
   default "include/common-meta-dhsom-extras-qt6.yml"
+
+config KAS_INCLUDE_EXTRAS_TENSORFLOW_YML_FILE
+  string "KAS Extras layer TensorFlow YML file"
+  depends on INCLUDE_EXTRAS_TENSORFLOW_YML
+  default "include/common-meta-dhsom-extras-tensorflow.yml"
 
 config KAS_INCLUDE_EXTRAS_WPE_YML_FILE
   string "KAS Extras layer WPE YML file"
