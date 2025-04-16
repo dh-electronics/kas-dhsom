@@ -19,3 +19,6 @@ local_conf_header:
   cve-check: |
     INHERIT += "cve-check"
     include conf/distro/include/cve-extra-exclusions.inc
+
+  spdx-list: |
+    INHERIT += "create-spdx"
