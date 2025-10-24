@@ -177,12 +177,6 @@ config INCLUDE_EXTRAS_GAMES_YML
     Include Games layer in bblayers.conf . This adds the Neverball game
     into the dh-image-demo, which is useful for testing point sprites.
 
-config INCLUDE_EXTRAS_QT5_YML
-  bool "Include Qt5 layers in build"
-  help
-    Include Qt5 layer in bblayers.conf . This adds Qt5 libraries and
-    examples into dh-image-demo .
-
 config INCLUDE_EXTRAS_QT6_YML
   bool "Include Qt6 layers in build"
   help
@@ -279,13 +273,8 @@ config KAS_INCLUDE_EXTRAS_FLUTTER_YML_FILE
 
 config KAS_INCLUDE_EXTRAS_GAMES_YML_FILE
   string "KAS Extras layer GAMES YML file"
-  depends on INCLUDE_EXTRAS_GAMES_YML && INCLUDE_EXTRAS_QT5_YML
+  depends on INCLUDE_EXTRAS_GAMES_YML
   default "include/common-meta-dhsom-extras-games.yml"
-
-config KAS_INCLUDE_EXTRAS_QT5_YML_FILE
-  string "KAS Extras layer Qt5 YML file"
-  depends on INCLUDE_EXTRAS_QT5_YML
-  default "include/common-meta-dhsom-extras-qt5.yml"
 
 config KAS_INCLUDE_EXTRAS_QT6_YML_FILE
   string "KAS Extras layer Qt6 YML file"
