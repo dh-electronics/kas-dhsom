@@ -18,6 +18,12 @@ repos:
     url: https://source.denx.de/denx/meta-mainline-common.git
     branch: main
 
+  meta-openembedded:
+    url: https://git.openembedded.org/meta-openembedded
+    layers:
+      meta-oe:
+      meta-python:
+
   meta-dhsom-stm32-wip-bsp:
     url: https://github.com/dh-electronics/meta-dhsom-stm32-wip-bsp.git
     branch: stm32mp25xx-initial-bring-up
