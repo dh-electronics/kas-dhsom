@@ -5,6 +5,10 @@ defaults:
   repos:
     branch: scarthgap
 
+repos:
+  bitbake:
+    branch: "2.8"
+
 local_conf_header:
   lttng: |
     LTTNGMODULES:pn-lttng-tools = ""

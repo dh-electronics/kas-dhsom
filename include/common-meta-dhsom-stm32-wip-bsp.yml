@@ -9,8 +9,14 @@ target:
   - core-image-base
 
 repos:
-  poky:
-    url: https://git.yoctoproject.org/poky
+  bitbake:
+    url: https://git.openembedded.org/bitbake
+    # No layers in this repository
+    layers:
+      .: disabled
+
+  oecore:
+    url: https://git.openembedded.org/openembedded-core
     layers:
       meta:
 
