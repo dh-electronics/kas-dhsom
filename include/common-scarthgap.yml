@@ -10,6 +10,10 @@ repos:
     branch: "2.8"
 
 local_conf_header:
+  cve-check: |
+    INHERIT += "cve-check"
+    include conf/distro/include/cve-extra-exclusions.inc
+
   lttng: |
     LTTNGMODULES:pn-lttng-tools = ""
 

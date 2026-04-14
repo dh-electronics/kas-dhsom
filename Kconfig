@@ -110,6 +110,11 @@ choice
   help
     OE release to use during the build.
 
+config RELEASE_WRYNOSE
+  bool "OE Wrynose 6.0 LTS"
+  help
+    OE Wrynose 6.0 LTS release .
+
 config RELEASE_SCARTHGAP
   bool "OE Scarthgap 5.0 LTS"
   help
@@ -199,6 +204,7 @@ config KAS_BUILD_SYSTEM
 
 config KAS_INCLUDE_RELEASE_YML_FILE
   string "KAS OE release YML file"
+  default "include/common-wrynose.yml" if RELEASE_WRYNOSE
   default "include/common-scarthgap.yml" if RELEASE_SCARTHGAP
 
 config KAS_INCLUDE_BSP_YML_FILE
