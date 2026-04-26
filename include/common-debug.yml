@@ -3,4 +3,4 @@ header:
 
 local_conf_header:
   debug_extra_image_features: |
-    EXTRA_IMAGE_FEATURES:append = " debug-tweaks tools-debug tools-profile"
+    EXTRA_IMAGE_FEATURES:append = " allow-empty-password allow-root-login empty-root-password post-install-logging tools-debug tools-profile"
