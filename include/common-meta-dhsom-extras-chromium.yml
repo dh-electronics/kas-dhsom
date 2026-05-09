@@ -9,7 +9,3 @@ repos:
     branch: master
     layers:
       meta-chromium:
-
-  meta-lts-mixins:
-    url: https://git.yoctoproject.org/meta-lts-mixins
-    branch: kirkstone/rust-1.70
