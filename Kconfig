@@ -88,6 +88,11 @@ config MACHINE_STM32MP1_DHCOR_TESTBENCH
   help
     OE MACHINE variable is set to dh-stm32mp1-dhcor-testbench .
 
+config MACHINE_STM32MP23_DHCOS_BB
+  bool "DH STM32MP23xx DHCOS BB"
+  help
+    OE MACHINE variable is set to dh-stm32mp23-dhcos-bb .
+
 config MACHINE_STM32MP25_DHCOS_BB
   bool "DH STM32MP25xx DHCOS BB"
   help
@@ -215,6 +220,7 @@ config KAS_INCLUDE_BSP_YML_FILE
 	     MACHINE_STM32MP1_DHCOR_AVENGER96 || \
 	     MACHINE_STM32MP1_DHCOR_DRC_COMPACT || \
 	     MACHINE_STM32MP1_DHCOR_TESTBENCH || \
+	     MACHINE_STM32MP23_DHCOS_BB || \
 	     MACHINE_STM32MP25_DHCOS_BB || \
 	     MACHINE_STM32MP25_DHCOS_DHSBC
   default "dh-imx6-dhcom-drc02.yml" if MACHINE_IMX6_DHCOM_DRC02
@@ -234,6 +240,7 @@ config KAS_INCLUDE_BSP_YML_FILE
   default "dh-stm32mp1-dhcor-avenger96.yml" if MACHINE_STM32MP1_DHCOR_AVENGER96
   default "dh-stm32mp1-dhcor-drc-compact.yml" if MACHINE_STM32MP1_DHCOR_DRC_COMPACT
   default "dh-stm32mp1-dhcor-testbench.yml" if MACHINE_STM32MP1_DHCOR_TESTBENCH
+  default "dh-stm32mp23-dhcos-bb.yml" if MACHINE_STM32MP23_DHCOS_BB
   default "dh-stm32mp25-dhcos-bb.yml" if MACHINE_STM32MP25_DHCOS_BB
   default "dh-stm32mp25-dhcos-dhsbc.yml" if MACHINE_STM32MP25_DHCOS_DHSBC
 

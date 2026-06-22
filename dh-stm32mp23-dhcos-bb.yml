@@ -1,0 +1,6 @@
+header:
+  version: 14
+  includes:
+    - include/common-meta-dhsom-stm32-wip-bsp.yml
+
+machine: dh-stm32mp23-dhcos-bb
