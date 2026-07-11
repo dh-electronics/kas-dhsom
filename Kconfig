@@ -112,14 +112,6 @@ config RELEASE_SCARTHGAP
 
 endchoice
 
-config INCLUDE_DH_REPO_YML
-  bool "Build linux and u-boot sources from DH source repositories"
-  depends on MACHINE_IMX6_DHCOM_PDK2
-  help
-    Use DH electronics source repositories instead of mainline sources.
-    This contains a well-tested and static version, but not as up to date
-    as linux mainline sources.
-
 config INCLUDE_EXTRAS_YML
   bool "Build full example dh-image-demo using meta-dhsom-extras layer"
   help
@@ -244,11 +236,6 @@ config KAS_INCLUDE_BSP_YML_FILE
   default "dh-stm32mp1-dhcor-testbench.yml" if MACHINE_STM32MP1_DHCOR_TESTBENCH
   default "dh-stm32mp25-dhcos-bb.yml" if MACHINE_STM32MP25_DHCOS_BB
   default "dh-stm32mp25-dhcos-dhsbc.yml" if MACHINE_STM32MP25_DHCOS_DHSBC
-
-config KAS_INCLUDE_DH_REPO_YML_FILE
-  string "KAS DH Repo YML file"
-  depends on INCLUDE_DH_REPO_YML
-  default "include/common-dh-repo-settings.yml"
 
 config KAS_INCLUDE_EXTRAS_YML_FILE
   string "KAS Extras layer YML file"
