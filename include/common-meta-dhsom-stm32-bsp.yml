@@ -21,7 +21,7 @@ repos:
       meta:
 
   meta-mainline-common:
-    url: https://source.denx.de/denx/meta-mainline-common.git
+    url: https://codeberg.org/marekv/meta-mainline-common.git
     branch: main
 
   meta-dhsom-stm32-bsp:
